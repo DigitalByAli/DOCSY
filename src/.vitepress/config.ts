@@ -49,6 +49,7 @@ export default defineConfig({
         items: [
           { text: 'Terminal', link: '/advanced/terminal' },
           { text: 'Deployment', link: '/advanced/deployment' },
+          { text: 'Favicon', link: '/advanced/favicon' },
         ],
       },
     ],
