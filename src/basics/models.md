@@ -50,7 +50,7 @@ export class Student extends Entity {
 
 export class Teacher extends Entity {
     name: string
-    product: Many<Student, 'teachers'>
+    studends: Many<Student, 'teachers'>
 }
 ```
 
@@ -61,7 +61,7 @@ If a model should be accessible through every Workspace you have to define it as
 ```ts{7,13}
 import { GlobalEntity } from 'oksy';
 
-export class BuildingType extends Entity {
+export class BuildingType extends GlobalEntity {
     name: string
 }
 ```
