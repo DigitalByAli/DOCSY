@@ -64,7 +64,7 @@ type toast = (
 ```ts
 this.UI.Button({
     label: 'Click me!',
-    onClick: () => {
+    onClick: async () => {
         const name = await this.client.prompt('What is your name?');
         this.client.toast('success', `Hello, ${name}`)
     }
@@ -82,7 +82,7 @@ type prompt = (
 ```ts
 this.UI.Button({
     label: 'Click me!',
-    onClick: () => {
+    onClick: async () => {
         const confirm = await this.client.confirm('Are you sure?', 'This can not be undone.', 'Yes, Delete!');
         if (confirm) {
             this.client.toast('success', `Delete`);
