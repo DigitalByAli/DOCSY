@@ -4,7 +4,7 @@ This section explains what each folder and file means in a OKSY project
 
 ### `/models` 📁
 
-This folder houses all your database model defintions. That are written in TypeScript 🤩. You also see a `Core` folders, you can read more about that [on this page](/introduction/core-setup)
+This folder houses all your database model defintions. You also see a `Core` folders, you can read more about that [on this page](/introduction/core-setup)
 
 ### `/storage` 📁
 

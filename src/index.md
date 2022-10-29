@@ -9,6 +9,9 @@ hero:
     - theme: brand
       text: Get Started
       link: /introduction/get-started
+    - theme: alt
+      text: Join Discord
+      link: https://discord.gg/V6dtmWy9HP
 features:
   - icon: 💙
     title: 100% TypeScript
