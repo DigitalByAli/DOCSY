@@ -4,12 +4,15 @@ layout: home
 
 hero:
   name: OKSY
-  text: The Typescript Framework for busy developers
+  text: The TypeScript Framework for busy developers
   tagline: An opinionated full-stack framework for building back-office applications.
   actions:
     - theme: brand
       text: Get Started
       link: /introduction/get-started
+    - theme: alt
+      text: Tutorial video
+      link: https://www.youtube.com/watch?v=sCPD64Jk3zQ
     - theme: alt
       text: Join Discord
       link: https://discord.gg/V6dtmWy9HP

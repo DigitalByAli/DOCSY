@@ -12,6 +12,10 @@ export default defineConfig({
     lineNumbers: true
   },
   themeConfig: {
+    socialLinks: [
+      { icon: 'discord', link: 'https://discord.com/invite/V6dtmWy9HP' },
+      { icon: 'github', link: 'https://github.com/DigitalByAli/OKSY' },
+    ],
     sidebar: [
       {
         text: 'Introduction',
