@@ -2,60 +2,64 @@ import { defineConfig } from 'vitepress';
 
 // refer https://vitepress.vuejs.org/config/introduction for details
 export default defineConfig({
-  lang: 'en-US',
-  title: 'OKSY',
-  description: 'The Typescript Framework',
-  ignoreDeadLinks: true, // TODO: disable later
-  outDir: '../docs',
-  base: '/DOCSY/',
-  markdown: {
-    lineNumbers: true
-  },
-  themeConfig: {
-    socialLinks: [
-      { icon: 'discord', link: 'https://discord.com/invite/V6dtmWy9HP' },
-      { icon: 'github', link: 'https://github.com/DigitalByAli/OKSY' },
-    ],
-    sidebar: [
-      {
-        text: 'Introduction',
-        items: [
-          { text: 'Get Started', link: '/introduction/get-started' },
-          { text: 'Project Structure', link: '/introduction/project-structure' },
-          { text: 'Core setup', link: '/introduction/core-setup' },
-        ],
-      },
-      {
-        text: 'Basics',
-        items: [
-          { text: 'Model', link: '/basics/models' },
-          { text: 'Pages', link: '/basics/pages' },
-          { text: 'Database', link: '/basics/database' },
-          { text: 'Config', link: '/basics/config' },
-        ],
-      },
-      {
-        text: 'UI Components',
-        items: [
-          { text: 'Text', link: '/ui/text' },
-          { text: 'Container', link: '/ui/container' },
-          { text: 'DarkSidebar', link: '/ui/dark-side-bar' },
-          { text: 'Button', link: '/ui/button' },
-          { text: 'TextInput', link: '/ui/text-input' },
-          { text: 'Select', link: '/ui/select' },
-          { text: 'Toggle', link: '/ui/toggle' },
-          { text: 'FileUpload', link: '/ui/file-upload' },
-          { text: 'DataTable', link: '/ui/data-table' },
-        ],
-      },
-      {
-        text: 'Advanced',
-        items: [
-          { text: 'Terminal', link: '/advanced/terminal' },
-          { text: 'Deployment', link: '/advanced/deployment' },
-          { text: 'Favicon', link: '/advanced/favicon' },
-        ],
-      },
-    ],
-  },
+	lang: 'en-US',
+	title: 'OKSY',
+	description: 'The Typescript Framework',
+	ignoreDeadLinks: true, // TODO: disable later
+	outDir: '../docs',
+	base: '/DOCSY/',
+	markdown: {
+		lineNumbers: true
+	},
+	themeConfig: {
+		socialLinks: [
+			{ icon: 'discord', link: 'https://discord.com/invite/V6dtmWy9HP' },
+			{ icon: 'github', link: 'https://github.com/DigitalByAli/OKSY' },
+		],
+		sidebar: [
+			{
+				text: 'Your first app',
+				items: [
+					{ text: 'Install & Run', link: '/introduction/install-and-run' },
+					{ text: 'Models', link: '/introduction/1-models' },
+					{ text: 'Index Page', link: '/introduction/2-index' },
+					{ text: 'Edit Page', link: '/introduction/3-edit' },
+					{ text: 'Invite', link: '/introduction/4-invite' },
+
+					// { text: 'Get Started', link: '/introduction/get-started' },
+					// { text: 'Project Structure', link: '/introduction/project-structure' },
+					// { text: 'Core setup', link: '/introduction/core-setup' },
+				],
+			},
+			{
+				text: 'Essentials',
+				items: [
+					{ text: 'Model', link: '/basics/models' },
+					{ text: 'Database', link: '/basics/database' },
+					{ text: 'Pages', link: '/basics/pages' },
+					{ text: 'Terminal', link: '/advanced/terminal' },
+					{ text: 'Favicon', link: '/advanced/favicon' },
+					{ text: 'Seeder', link: '/advanced/favicon' },
+					{ text: 'Config', link: '/basics/config' },
+				],
+			},
+			{
+				text: 'UI Components',
+				items: [
+					{ text: 'Text', link: '/ui/text' },
+					{ text: 'Container', link: '/ui/container' },
+					{ text: 'DarkSidebar', link: '/ui/dark-side-bar' },
+					{ text: 'Button', link: '/ui/button' },
+					{ text: 'TextInput', link: '/ui/text-input' },
+					{ text: 'Select', link: '/ui/select' },
+					{ text: 'Toggle', link: '/ui/toggle' },
+					{ text: 'FileUpload', link: '/ui/file-upload' },
+					{ text: 'DataTable', link: '/ui/data-table' },
+					{ text: 'Toast', link: '/ui/data-table' },
+					{ text: 'Confirm', link: '/ui/data-table' },
+					{ text: 'Prompt', link: '/ui/data-table' },
+				],
+			},
+		],
+	},
 });
