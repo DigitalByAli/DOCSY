@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /introduction/get-started
+      link: /introduction/install-and-run.html
     - theme: alt
       text: Tutorial video
       link: https://www.youtube.com/watch?v=sCPD64Jk3zQ

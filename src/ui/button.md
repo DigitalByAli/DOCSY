@@ -1,3 +1,11 @@
+<script setup>
+import BaseButton from '../../../SRC/public/src/Components/Base/BaseButton.vue'
+
+function clicky() {
+    alert("You clicked a button!");
+}
+</script>
+
 # Button
 
 ## Normal buttons
@@ -8,6 +16,12 @@ this.UI.Button({
     onClick: () => { ... }
 });
 ```
+
+<BaseButton
+    @clicked="clicky"
+    type="primary"
+    label="Primary"
+/>
 
 ## Ghosts
 

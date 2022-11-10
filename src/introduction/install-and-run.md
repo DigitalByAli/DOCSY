@@ -1,4 +1,10 @@
-# Get started
+# Install and Run
+
+In this section we will build the following application:
+
+```
+VIDEO OF APP
+```
 
 ::: warning DOCKER
 You need to have Docker installed on your machine. [Click here](https://docs.docker.com/get-docker/) for documentation on how to install Docker on your machine.

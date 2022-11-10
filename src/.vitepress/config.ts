@@ -9,7 +9,14 @@ export default defineConfig({
 	outDir: '../docs',
 	base: '/DOCSY/',
 	markdown: {
-		lineNumbers: true
+		theme: 'dark-plus',
+	},
+	vite: {
+		server: {
+			fs: {
+				strict: false
+			}
+		}
 	},
 	themeConfig: {
 		socialLinks: [
@@ -20,27 +27,24 @@ export default defineConfig({
 			{
 				text: 'Your first app',
 				items: [
-					{ text: 'Install & Run', link: '/introduction/install-and-run' },
-					{ text: 'Models', link: '/introduction/1-models' },
-					{ text: 'Index Page', link: '/introduction/2-index' },
-					{ text: 'Edit Page', link: '/introduction/3-edit' },
-					{ text: 'Invite', link: '/introduction/4-invite' },
-
-					// { text: 'Get Started', link: '/introduction/get-started' },
-					// { text: 'Project Structure', link: '/introduction/project-structure' },
-					// { text: 'Core setup', link: '/introduction/core-setup' },
+					{ text: '0 - Install & Run', link: '/introduction/install-and-run' },
+					{ text: '1 - Models', link: '/introduction/models' },
+					{ text: '2 - Seeding', link: '/introduction/seeding' },
+					{ text: '3 - Index And Sidebar', link: '/introduction/index-and-sidebar' },
+					{ text: '4 - Edit Form', link: '/introduction/edit-form' },
+					{ text: '5 - Final Product', link: '/introduction/final-product' },
 				],
 			},
 			{
 				text: 'Essentials',
 				items: [
-					{ text: 'Model', link: '/basics/models' },
-					{ text: 'Database', link: '/basics/database' },
-					{ text: 'Pages', link: '/basics/pages' },
-					{ text: 'Terminal', link: '/advanced/terminal' },
-					{ text: 'Favicon', link: '/advanced/favicon' },
-					{ text: 'Seeder', link: '/advanced/favicon' },
-					{ text: 'Config', link: '/basics/config' },
+					{ text: 'Core', link: '/essentials/core' },
+					{ text: 'Models', link: '/essentials/models' },
+					{ text: 'Database', link: '/essentials/database' },
+					{ text: 'Pages', link: '/essentials/pages' },
+					{ text: 'Terminal', link: '/essentials/terminal' },
+					{ text: 'Favicon', link: '/essentials/favicon' },
+					{ text: 'Config', link: '/essentials/config' },
 				],
 			},
 			{

@@ -1,6 +1,6 @@
 # Database
 
-The database class is only available through page classes and is responsible for creating and deleting models.
+The database class is only available through page classes (*through `this.database`*) and is responsible for creating and deleting models.
 
 ## Accessing the database object
 
