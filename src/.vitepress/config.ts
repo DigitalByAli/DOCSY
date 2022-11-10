@@ -52,7 +52,7 @@ export default defineConfig({
 				items: [
 					{ text: 'Text', link: '/ui/text' },
 					{ text: 'Container', link: '/ui/container' },
-					{ text: 'DarkSidebar', link: '/ui/dark-side-bar' },
+					{ text: 'DarkSidebar', link: '/ui/dark-sidebar' },
 					{ text: 'Button', link: '/ui/button' },
 					{ text: 'TextInput', link: '/ui/text-input' },
 					{ text: 'Select', link: '/ui/select' },

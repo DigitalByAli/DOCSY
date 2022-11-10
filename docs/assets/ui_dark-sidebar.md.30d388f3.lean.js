@@ -1,0 +1,1 @@
+import{_ as s,o as a,c as n,a as p}from"./app.0c7ae635.js";const u=JSON.parse('{"title":"Dark Sidebar","description":"","frontmatter":{},"headers":[],"relativePath":"ui/dark-sidebar.md"}'),l={name:"ui/dark-sidebar.md"},o=p("",7),e=[o];function D(t,c,r,y,i,C){return a(),n("div",null,e)}const h=s(l,[["render",D]]);export{u as __pageData,h as default};
