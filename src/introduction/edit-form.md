@@ -31,11 +31,13 @@ export default class BrandForm extends BasePage {
 Notice the `:brandId` parameter in the URL, this will be passed to the `init` method. We want to look up the `Brand` model using the `brandId` variable and return a 404 page if no brand could be found:
 
 ```ts
+import { Brand } from '../models/Brand'; // [!code ++]
+
 export default class BrandForm extends BasePage {
 
 	static URL = '/brand/:brandId';
 
-    brand: Brand // [!code ++]
+    private brand: Brand // [!code ++]
 
     init(brandId: string) { // [!code ++]
         this.brand = this.database.getById('Brand', brandId); // [!code ++]
@@ -57,9 +59,6 @@ TODO: add 404 page
 Let's also add a static method to this page that returns us the URL of the page.
 
 ```ts
-import { BasePage } from 'oksy';
-import { Layout } from './Components/Layout';
-import { Brand } from '../models/Brand'; // [!code ++]
 import { Workspace } from '../models/Core/Workspace'; // [!code ++]
 
 export default class BrandForm extends BasePage {
@@ -88,11 +87,8 @@ Now that our `BrandForm` is present we can uncomment the following lines in `Bra
 // add the import
 import BrandForm from './BrandForm.page';
 
-// uncomment line 1
+// uncomment
 this.client.navigate(BrandForm.getUrl(this.workspace, brand), 'push'); 
-
-// uncomment line 2
-this.client.navigate(BrandForm.getUrl(this.workspace, newBrand), 'push');
 ```
 
 ## Page title and card

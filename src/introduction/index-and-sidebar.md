@@ -163,8 +163,8 @@ this.UI.DataTable({
 When the user clicks the create button we want to **create a new brand model** and then **navigate the client to the edit form of the newly created brand**. Add the following lines in the `onClick` method.
 
 ```ts
-const newBrand = this.database.create('Brand');
-// this.client.navigate(BrandForm.getUrl(this.workspace, newBrand), 'push');
+const brand = this.database.create('Brand');
+// this.client.navigate(BrandForm.getUrl(this.workspace, brand), 'push');
 ```
 
 ::: warning
