@@ -8,7 +8,7 @@ TODO: Screenshot of the page
 
 ## Remove boilerplate code
 
-Now that we have a workspace, user and some brands we can create a brand index page. Delete the `/views/Welcome.page.ts` and create a `BrandIndex.page.ts` file with the following contents:
+Now that we have a workspace, user and some brands we can create a brand index page. Delete the `/views/Home.page.ts` and create a `/views/BrandIndex.page.ts` file with the following contents:
 
 ```ts
 import { BasePage } from 'oksy';
@@ -30,7 +30,7 @@ Open the `/views/Components/Layout.ts` file and rename the sidebar item to:
 
 ```ts{2,7}
 import { BasePage } from 'oksy';
-import BrandIndex from 'views/BrandIndex.page';
+import BrandIndex from './../BrandIndex.page';
 
 export function Layout(page: BasePage, view: () => any[]) {
 	return page.UI.DarkSidebar({
@@ -46,7 +46,7 @@ The `icon` key value should come from the [Google Material Symbol Icon Set](http
 
 ## Adding a title
 
-Open the `BrandIndex.page.ts` and add the following lines:
+Open the `/views/BrandIndex.page.ts` and add the following lines:
 
 ```ts
 import { BasePage } from 'oksy';
@@ -182,11 +182,11 @@ this.UI.DataTable({
 		...,
 		{ // [!code ++]
 			name: '', // [!code ++]
-			view: ({ refresh }) => [ // [!code ++]
+			view: () => [ // [!code ++]
 				this.UI.Container({ // [!code ++]
 					class: 'flex', // [!code ++]
-					items: () => [ ] // [!code ++]
-				}) // [!code ++]
+					items: () => [] // [!code ++]
+				}), // [!code ++]
 			], // [!code ++]
 		}, // [!code ++]
 	],
@@ -205,7 +205,7 @@ this.UI.Container({
 			label: 'Edit', // [!code ++]
 			icon: 'edit', // [!code ++]
 			onClick: () => { // [!code ++]
-				// this.client.navigate(PhoneForm.getUrl(this.workspace, phone), 'push'); // [!code ++]
+				// this.client.navigate(BrandForm.getUrl(this.workspace, brand), 'push'); // [!code ++]
 			} // [!code ++]
 		}), // [!code ++]
 	]
@@ -252,4 +252,4 @@ this.UI.Container({
 
 When the user clicks on the delete button we show a confirm dialog. If the users accepts the confirm **only** then will the brand be deleted.
 
-The `refresh` method manually refreshed the datatable after deletion. This method is imported from `items: ({ refresh }) => [`. (a couple of lines above).
+The `refresh` method manually refreshed the datatable after deletion. This method is imported from `items: ({ refresh }) => [` (a couple of lines above).

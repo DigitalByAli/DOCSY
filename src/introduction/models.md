@@ -2,10 +2,11 @@
 
 After installing and running OKSY you should see that some files and folders have been generated.
 
-Create a new file `models/Brand.ts` and add the following
+Create a new file `/models/Brand.ts` and add the following
 
 ```ts
-import { Entity } from 'oksy';
+import { Entity, Many } from 'oksy';
+import { Car } from './Car';
 
 export class Brand extends Entity {
     name: string
@@ -13,10 +14,11 @@ export class Brand extends Entity {
 }
 ```
 
-And create the `models/Car.ts` file with the following contents:
+And create the `/models/Car.ts` file with the following contents:
 
 ```ts
-import { Entity } from 'oksy';
+import { Entity, One } from 'oksy';
+import { Brand } from './Brand';
 
 export class Car extends Entity {
     brand: One<Brand, 'cars'>
@@ -24,8 +26,4 @@ export class Car extends Entity {
 }
 ```
 
-You need to restart the server after modifying the `/models` folder. You can type `oksy` to start the OKSY server if you are inside the Docker container. After restarting the server you should have 2 new tables (`brand` and `car`) added to your database (`database.sqlite`)
-
-```
-TODO: SCREENSHOT VAN 2 TABBELLEN
-```
+You need to restart the server after modifying the `/models` folder. After restarting the server you should have 2 new tables (`brand` and `car`) added to your database (`/storage/database.sqlite`)

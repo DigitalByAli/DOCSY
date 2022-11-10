@@ -28,22 +28,7 @@ export default class BrandForm extends BasePage {
 
 ## URL & init method
 
-Notice the `:brandId` parameter in the URL, this will be passed to the init method:
-
-```ts
-export default class BrandForm extends BasePage {
-
-	static URL = '/brand/:brandId';
-
-    init(brandId: string) {// [!code ++]
-        // [!code ++]
-    } // [!code ++]
-
-	view() { ... }
-}
-```
-
-We want to lookup the `Brand` model using the `brandId` variable and return a 404 page if no brand could be found:
+Notice the `:brandId` parameter in the URL, this will be passed to the `init` method. We want to look up the `Brand` model using the `brandId` variable and return a 404 page if no brand could be found:
 
 ```ts
 export default class BrandForm extends BasePage {
@@ -52,10 +37,10 @@ export default class BrandForm extends BasePage {
 
     brand: Brand // [!code ++]
 
-    init(brandId: string) {
+    init(brandId: string) { // [!code ++]
         this.brand = this.database.getById('Brand', brandId); // [!code ++]
         if (this.brand === null) return false; // [!code ++]
-    }
+    } // [!code ++]
 
 	view() { ... }
 }
@@ -65,6 +50,49 @@ If the `init` function returns a `false` then a 404 page will be displayed to th
 
 ```
 TODO: add 404 page
+```
+
+## Static getUrl helper
+
+Let's also add a static method to this page that returns us the URL of the page.
+
+```ts
+import { BasePage } from 'oksy';
+import { Layout } from './Components/Layout';
+import { Brand } from '../models/Brand'; // [!code ++]
+import { Workspace } from '../models/Core/Workspace'; // [!code ++]
+
+export default class BrandForm extends BasePage {
+
+	static URL = '/brand/:brandId';
+
+    brand: Brand
+
+    init(brandId: string) { ... }
+
+	view() { ... }
+
+    static getUrl(workspace: Workspace, brand: Brand) { // [!code ++]
+        return `/${workspace.id}/brand/${brand.id}`; // [!code ++]
+    } // [!code ++]
+}
+```
+
+The `Workspace` also needs to be passed in because each URL is prefixed with the `workspace.id`.
+
+## Uncomment lines in `BrandIndex`
+
+Now that our `BrandForm` is present we can uncomment the following lines in `BrandIndex`:
+
+```ts
+// add the import
+import BrandForm from './BrandForm.page';
+
+// uncomment line 1
+this.client.navigate(BrandForm.getUrl(this.workspace, brand), 'push'); 
+
+// uncomment line 2
+this.client.navigate(BrandForm.getUrl(this.workspace, newBrand), 'push');
 ```
 
 ## Page title and card
@@ -116,24 +144,7 @@ this.UI.Container({
 }),
 ```
 
-This piece of code is the label above the input:
-
-```ts
-this.UI.Text({
-    label: 'Name',
-    class: 'text-sm font-medium text-gray-900'
-}),
-```
-
-This code is the input itself:
-```ts
-this.UI.Input({
-    getter: () => this.brand.name,
-    setter: value => this.brand.name = value
-}),
-```
-
-You see that the `getter` and the `setter` are bound to `this.brand.name`.
+You see that the `getter` and the `setter` of the `Input` are bound to `this.brand.name`.
 
 ## Add datatable
 
@@ -254,16 +265,4 @@ this.UI.DataTable({
     ],
     columns: car => [ ... ],
 }),
-```
-
-## Uncomment lines in `BrandIndex`
-
-Now that our `BrandForm` is working we can uncomment the following lines in `BrandIndex`:
-
-```ts
-// line 1
-this.client.navigate(PhoneForm.getUrl(this.workspace, phone), 'push');
-
-// line 2
-this.client.navigate(BrandForm.getUrl(this.workspace, newBrand), 'push');
 ```

@@ -3,8 +3,8 @@
 Seeding is the process of adding a starting set of data to your database. Create a new file and folder `/seed/seed.ts` with the following content:
 
 ```ts
-import { seed } from 'oksy';
-import { Brand } from '../models/Brand';
+import { hash, seed } from 'oksy';
+import { Membership } from '../models/Core/Membership';
 
 export default seed(async ({ reactiveStore, sqliteClient }) => {
 
@@ -30,19 +30,13 @@ export default seed(async ({ reactiveStore, sqliteClient }) => {
 	membership.workspace = workspace;
 
     // add the toyota brand
-    const brand1 = workspace1.database.create('Brand');
+    const brand1 = workspace.database.create('Brand');
     brand1.name = 'Toyota';
 
     // add the mercedes brand
-    const brand2 = workspace1.database.create('Brand');
+    const brand2 = workspace.database.create('Brand');
     brand2.name = 'Mercedes-Benz';
 });
 ```
 
-The seeder only runs **on boot** of OKSY, so for your seeder to take effect we need to restart the server. Press `<ctrl> + c` to stop the server if it is already running and type in `oksy` to start the server.
-
-You should have the following data in your database (*`database.sqlite`*):
-
-```
-TODO: SCREENSHOT VAN GESEEDE TABLE DATA
-```
+The seeder only runs **on boot** of OKSY, so for your seeder to take effect we need to restart the server. Press `<ctrl> + c` to stop the server.
