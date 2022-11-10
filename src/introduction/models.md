@@ -24,19 +24,7 @@ export class Car extends Entity {
 }
 ```
 
-You need to restart the server after modifying the `/models` folder. You should see the following message in your console:
-
-```
-TODO: MESSAGE MET RESTART SERVER
-```
-
-You can type `oksy` to start the OKSY server:
-
-```
-TODO VIDEO DAT IK OKSY TYP EN ENTER CLICK
-```
-
-The `storage/database.sqlite` should have 2 new tables added to it: `brand` and `car`.
+You need to restart the server after modifying the `/models` folder. You can type `oksy` to start the OKSY server if you are inside the docker container. After restarting the server you should have 2 new tables (`brand` and `car`) added to your database (`database.sqlite`)
 
 ```
 TODO: SCREENSHOT VAN 2 TABBELLEN

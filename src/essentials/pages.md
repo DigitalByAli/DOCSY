@@ -41,64 +41,6 @@ export class MealEdit extends BasePage {
 
 The `init` function is called before the page is rendered. The parameters of the URL are passed in as arguments. If the `init` function returns a `false` then a `404` page will be rendered to the user.
 
-## User interactions
-
-### Toast
-
-```ts
-this.UI.Button({
-    label: 'Click me!',
-    onClick: () => this.client.toast('success', 'You clicked the button')
-})
-```
-
-```ts
-type toast = (
-    type: 'success' | 'error',
-    message: string
-) => void
-```
-
-### Prompt
-
-```ts
-this.UI.Button({
-    label: 'Click me!',
-    onClick: async () => {
-        const name = await this.client.prompt('What is your name?');
-        this.client.toast('success', `Hello, ${name}`)
-    }
-})
-```
-
-```ts
-type prompt = (
-    message: string
-) => Promise<'CANCEL' | string>
-```
-
-### Confirm
-
-```ts
-this.UI.Button({
-    label: 'Click me!',
-    onClick: async () => {
-        const confirm = await this.client.confirm('Are you sure?', 'This can not be undone.', 'Yes, Delete!');
-        if (confirm) {
-            this.client.toast('success', `Delete`);
-        }
-    }
-})
-```
-
-```ts
-type confirm = (
-    title: string,
-    message: string,
-    primaryButtonText: string = 'Confirm'
-) => Promise<boolean>
-```
-
 ### Navigate
 
 ```ts
