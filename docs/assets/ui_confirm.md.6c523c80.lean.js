@@ -1,0 +1,1 @@
+import{_ as s,o as n,c as a,a as l}from"./app.976319d0.js";const _=JSON.parse('{"title":"Confirm","description":"","frontmatter":{},"headers":[],"relativePath":"ui/confirm.md"}'),p={name:"ui/confirm.md"},o=l("",3),e=[o];function D(c,t,r,i,y,C){return n(),a("div",null,e)}const h=s(p,[["render",D]]);export{_ as __pageData,h as default};

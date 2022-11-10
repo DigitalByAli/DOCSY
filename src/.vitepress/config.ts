@@ -54,7 +54,7 @@ export default defineConfig({
 					{ text: 'Container', link: '/ui/container' },
 					{ text: 'DarkSidebar', link: '/ui/dark-sidebar' },
 					{ text: 'Button', link: '/ui/button' },
-					{ text: 'TextInput', link: '/ui/text-input' },
+					{ text: 'Input', link: '/ui/input' },
 					{ text: 'Select', link: '/ui/select' },
 					{ text: 'Toggle', link: '/ui/toggle' },
 					{ text: 'FileUpload', link: '/ui/file-upload' },
