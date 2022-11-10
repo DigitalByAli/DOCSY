@@ -1,1 +1,0 @@
-import{_ as s,o as a,c as n,a as l}from"./app.5a65000a.js";const E=JSON.parse('{"title":"Seeding","description":"","frontmatter":{},"headers":[],"relativePath":"introduction/seeding.md"}'),p={name:"introduction/seeding.md"},o=l("",6),e=[o];function D(t,r,c,y,C,i){return a(),n("div",null,e)}const F=s(p,[["render",D]]);export{E as __pageData,F as default};
