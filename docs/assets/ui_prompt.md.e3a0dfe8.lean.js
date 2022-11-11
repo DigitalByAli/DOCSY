@@ -1,1 +1,15 @@
-import{_ as s,o as n,c as a,a as p}from"./app.4c7a0c6b.js";const h=JSON.parse('{"title":"Prompt","description":"","frontmatter":{},"headers":[],"relativePath":"ui/prompt.md"}'),l={name:"ui/prompt.md"},o=p("",4),e=[o];function t(D,c,r,y,i,C){return n(),a("div",null,e)}const _=s(l,[["render",t]]);export{h as __pageData,_ as default};
+import { _ as _export_sfc, o as openBlock, c as createElementBlock, a as createStaticVNode } from "./app.4c7a0c6b.js";
+const __pageData = JSON.parse('{"title":"Prompt","description":"","frontmatter":{},"headers":[],"relativePath":"ui/prompt.md"}');
+const _sfc_main = { name: "ui/prompt.md" };
+const _hoisted_1 = /* @__PURE__ */ createStaticVNode("", 4);
+const _hoisted_5 = [
+  _hoisted_1
+];
+function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", null, _hoisted_5);
+}
+const prompt = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
+export {
+  __pageData,
+  prompt as default
+};

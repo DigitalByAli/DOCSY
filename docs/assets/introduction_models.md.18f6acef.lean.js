@@ -1,1 +1,15 @@
-import{_ as s,o as a,c as n,a as o}from"./app.4c7a0c6b.js";const E=JSON.parse('{"title":"Models","description":"","frontmatter":{},"headers":[],"relativePath":"introduction/models.md"}'),l={name:"introduction/models.md"},p=o("",6),e=[p];function t(r,c,D,y,d,C){return a(),n("div",null,e)}const m=s(l,[["render",t]]);export{E as __pageData,m as default};
+import { _ as _export_sfc, o as openBlock, c as createElementBlock, a as createStaticVNode } from "./app.4c7a0c6b.js";
+const __pageData = JSON.parse('{"title":"Models","description":"","frontmatter":{},"headers":[],"relativePath":"introduction/models.md"}');
+const _sfc_main = { name: "introduction/models.md" };
+const _hoisted_1 = /* @__PURE__ */ createStaticVNode("", 6);
+const _hoisted_7 = [
+  _hoisted_1
+];
+function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", null, _hoisted_7);
+}
+const models = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
+export {
+  __pageData,
+  models as default
+};

@@ -15,7 +15,10 @@ export default defineConfig({
 		server: {
 			fs: {
 				strict: false
-			}
+			},
+		},
+		build: {
+			minify: false,
 		}
 	},
 	themeConfig: {

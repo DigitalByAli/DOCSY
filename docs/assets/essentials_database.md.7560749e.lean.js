@@ -1,1 +1,15 @@
-import{_ as s,o as a,c as n,a as e}from"./app.4c7a0c6b.js";const h=JSON.parse('{"title":"Database","description":"","frontmatter":{},"headers":[{"level":2,"title":"Accessing the database object","slug":"accessing-the-database-object","link":"#accessing-the-database-object","children":[]},{"level":2,"title":"Creating a model","slug":"creating-a-model","link":"#creating-a-model","children":[]},{"level":2,"title":"Retrieving models","slug":"retrieving-models","link":"#retrieving-models","children":[]}],"relativePath":"essentials/database.md"}'),l={name:"essentials/database.md"},o=e("",8),p=[o];function t(c,D,r,i,y,d){return a(),n("div",null,p)}const g=s(l,[["render",t]]);export{h as __pageData,g as default};
+import { _ as _export_sfc, o as openBlock, c as createElementBlock, a as createStaticVNode } from "./app.4c7a0c6b.js";
+const __pageData = JSON.parse('{"title":"Database","description":"","frontmatter":{},"headers":[{"level":2,"title":"Accessing the database object","slug":"accessing-the-database-object","link":"#accessing-the-database-object","children":[]},{"level":2,"title":"Creating a model","slug":"creating-a-model","link":"#creating-a-model","children":[]},{"level":2,"title":"Retrieving models","slug":"retrieving-models","link":"#retrieving-models","children":[]}],"relativePath":"essentials/database.md"}');
+const _sfc_main = { name: "essentials/database.md" };
+const _hoisted_1 = /* @__PURE__ */ createStaticVNode("", 8);
+const _hoisted_9 = [
+  _hoisted_1
+];
+function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", null, _hoisted_9);
+}
+const database = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
+export {
+  __pageData,
+  database as default
+};
