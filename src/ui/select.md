@@ -99,12 +99,14 @@ export class Wizard extends Entity {
 
 ## Select One
 
+<ClientOnly>
 <BaseSelect
     :request="requestWizards"
     :selected="selectedWizards"
     @deselect="deselectWizard"
     @select="selectWizard"
 />
+</ClientOnly>
 
 ```ts
 this.UI.SelectOne({
@@ -149,13 +151,15 @@ type onSelect = (selectedItem: null | SelectItem) => void
 
 ## Select Many
 
-<!-- <BaseSelect
+<ClientOnly>
+<BaseSelect
     :request="requestUsers"
     :selected="selectedUsers"
     @deselect="deselectUser"
     @select="selectUser"
     multiple
-/> -->
+/>
+</ClientOnly>
 
 ```ts
 this.UI.SelectMany({
