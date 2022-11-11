@@ -27,8 +27,6 @@ Each page should extend from the `BasePage` class and specify the `URL` and `vie
 ## URL Parameters
 
 ```ts
-import { BasePage } from 'oksy';
-
 export class MealEdit extends BasePage {
     static URL = '/customer/:customerId'
 
@@ -39,7 +37,20 @@ export class MealEdit extends BasePage {
 }
 ```
 
-The `init` function is called before the page is rendered. The parameters of the URL are passed in as arguments. If the `init` function returns a `false` then a `404` page will be rendered to the user.
+The `init` function is called before the page is rendered. The parameters of the URL are passed in as arguments. 
+If the `init` function returns a `false` then a `404` page will be rendered to the user.
+
+## Optional parameters
+
+```ts{2}
+export class MealEdit extends BasePage {
+    static URL = '/customer/:customerId?'
+
+    init(customerId: undefined | string) { ... }
+}
+```
+
+If the URL parameter ends with a `?` then the parameter is optional and could be `undefined` in the `init` function.
 
 ### Navigate
 
