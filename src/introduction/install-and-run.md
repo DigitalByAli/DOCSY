@@ -1,14 +1,11 @@
 # Install and Run
 
-In this section we will build the following application:
-
-```
-VIDEO OF APP
+```sh
+mkdir oksy-app-1
+cd oksy-app-1
 ```
 
 ```sh
-mkdir my-cool-project
-cd my-cool-project
 docker run --rm -it -p 8000:8000 -v ${PWD}:"/home/project" digitalbyali/oksy:v1
 ```
 
@@ -24,8 +21,8 @@ docker
 ```
 :::
 
-After running the above command you should see:
+## Demo App
 
-![init-screen](/init-screen.png)
+In this section we will build the following application:
 
-Press `<enter>` to install and run OKSY in `development` mode.
+`TODO: VIDEO OF APP`
