@@ -14,6 +14,8 @@
   "license": "ISC",
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",
+    "@vueuse/components": "^9.5.0",
+    "@vueuse/core": "^9.5.0",
     "autoprefixer": "^10.4.13",
     "npm-check-updates": "^16.3.18",
     "postcss": "^8.4.18",
