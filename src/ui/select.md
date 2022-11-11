@@ -1,4 +1,4 @@
-<script setup>
+<script lang='ts' setup>
 import BaseSelect from '../../../SRC/public/src/Components/Base/Select/BaseSelect.vue'
 import { ref } from 'vue'
 
@@ -149,13 +149,13 @@ type onSelect = (selectedItem: null | SelectItem) => void
 
 ## Select Many
 
-<BaseSelect
+<!-- <BaseSelect
     :request="requestUsers"
     :selected="selectedUsers"
     @deselect="deselectUser"
     @select="selectUser"
     multiple
-/>
+/> -->
 
 ```ts
 this.UI.SelectMany({
