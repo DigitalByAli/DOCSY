@@ -38,6 +38,4 @@ export default class HomePage extends BasePage {
 }
 ```
 
-```
-TODO: SCREENSHOT
-```
+<img src="/ui/dark-sidebar.png" class='tw-rounded' />

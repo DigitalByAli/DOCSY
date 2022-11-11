@@ -2,14 +2,11 @@
 
 You should have the following application:
 
-```
-todo: video van de app
-```
+`TODO: VIDEO OF APP`
+
 
 If you spend a bit more time polishing it we can get this:
 
-```
-toto: video van betere app
-```
+`TODO: VIDEO OF BETTER APP`
 
 The source code of the polished version can be [found here](#).
