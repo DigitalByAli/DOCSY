@@ -2,13 +2,12 @@
 
 In this chapter we will make the following page:
 
-```
-TODO: Screenshot of the page
-```
+<img src="/introduction/1-min.png" class='tw-rounded' />
 
 ## Remove boilerplate code
 
-Now that we have a workspace, user and some brands we can create a brand index page. Delete the `/views/Home.page.ts` and create a `/views/BrandIndex.page.ts` file with the following contents:
+Now that we have a workspace, user and some brands we can create a brand index page.
+Delete the `/views/Home.page.ts` and create a `/views/BrandIndex.page.ts` file with the following contents:
 
 ```ts
 import { BasePage } from 'oksy';
@@ -71,14 +70,14 @@ export default class BrandIndex extends BasePage {
 
 This will display a title on your page:
 
-```
-TODO: SCREENSHOT OF PAGE TITLE
-```
+<img src="/introduction/2-min.png" class='tw-rounded' />
 
 ## Adding the datatable
 
-### Adding a white container
-Under the title we add a white container that will house our datatable
+### Add the datatable
+
+Add the `DataTable` wrapped in a `Container` element under the title.
+
 ```ts
 Layout(this, () => [
 	this.UI.Text({
@@ -87,32 +86,19 @@ Layout(this, () => [
 	}),
 	this.UI.Container({ // [!code ++]
 		class: 'w-full flex flex-col space-y-3 px-4 py-5 sm:p-6 rounded-lg shadow bg-white', // [!code ++]
-		items: () => [], // [!code ++]
+		items: () => [ // [!code ++]
+			this.UI.DataTable({ // [!code ++]
+				data: () => this.database.getAllWithDraft('Brand'), // [!code ++]
+				actions: [], // [!code ++]
+				columns: brand => [], // [!code ++]
+			}), // [!code ++]
+		], // [!code ++]
 	}), // [!code ++]
 ]),
 ```
 
-### Add the datatable
-```ts
-this.UI.Container({
-	class: 'w-full flex flex-col space-y-3 px-4 py-5 sm:p-6 rounded-lg shadow bg-white',
-	items: () => [
-		this.UI.DataTable({ // [!code ++]
-			data: () => this.database.getAllWithDraft('Brand'), // [!code ++]
-			actions: [], // [!code ++]
-			columns: brand => [], // [!code ++]
-		}), // [!code ++]
-	],
-}),
-```
-
-This should display an empty datatable on your page:
-
-```
-TODO: empty datatable
-```
-
 ### Add the columns
+
 ```ts
 this.UI.DataTable({
 	data: () => this.database.getAllWithDraft('Brand'),
@@ -140,9 +126,7 @@ this.UI.DataTable({
 
 You should see 2 columns that are both **searchable** and **sortable** on your page:
 
-```
-TODO: screenshots van table
-```
+<img src="/introduction/3-min.png" class='tw-rounded' />
 
 ### Add a create button
 
@@ -160,6 +144,8 @@ this.UI.DataTable({
 }),
 ```
 
+<img src="/introduction/4-min.png" class='tw-rounded' />
+
 When the user clicks the create button we want to **create a new brand model** and then **navigate the client to the edit form of the newly created brand**. Add the following lines in the `onClick` method.
 
 ```ts
@@ -172,6 +158,8 @@ The second line is commented out because we do not have a `BrandForm` class **ye
 :::
 
 ### Add an actions columns
+
+<img src="/introduction/5-min.png" class='tw-rounded' />
 
 Add the following columns with an empty name (`name: ''`) to your columns:
 
@@ -218,9 +206,7 @@ Temporarily comment out the `.navigate` line because the page does not exist yet
 
 You should see the edit button in the action columns
 
-```
-TODO: Add screenshot
-```
+<img src="/introduction/6-min.png" class='tw-rounded' />
 
 Now let's add a delete button to the datatable:
 
@@ -250,6 +236,6 @@ this.UI.Container({
 })
 ```
 
-When the user clicks on the delete button we show a confirm dialog. If the users accepts the confirm **only** then will the brand be deleted.
+When the user clicks on the delete button we show a confirm dialog. We delete the brand if the user accepts the confirm.
 
 The `refresh` method manually refreshed the datatable after deletion. This method is imported from `items: ({ refresh }) => [` (a couple of lines above).

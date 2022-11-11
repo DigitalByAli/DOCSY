@@ -24,7 +24,7 @@ export default seed(async ({ reactiveStore, sqliteClient }) => {
 	user.email = 'info@admin.nl';
 	user.passwordHash = hash('password'); // password is 'password'
 
-    // add admin user to created workspaces
+    // add admin user to the workspace
     const membership: Membership = workspace.database.create('Membership');
 	membership.user = user;
 	membership.workspace = workspace;
@@ -33,10 +33,10 @@ export default seed(async ({ reactiveStore, sqliteClient }) => {
     const brand1 = workspace.database.create('Brand');
     brand1.name = 'Toyota';
 
-    // add the mercedes brand
+    // add the mercedes-benz brand
     const brand2 = workspace.database.create('Brand');
     brand2.name = 'Mercedes-Benz';
 });
 ```
 
-The seeder only runs **on boot** of OKSY, so for your seeder to take effect we need to restart the server. Press `<ctrl> + c` to stop the server.
+The seeder only runs **on boot** of OKSY, so for your seeder to take effect we need to **restart the server**. Press `<ctrl> + c` to stop the server.

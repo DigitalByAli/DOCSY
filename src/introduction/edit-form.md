@@ -2,9 +2,7 @@
 
 In this chapter we will make the following page:
 
-```
-TODO: Screenshot of the page
-```
+<img src="/introduction/7-min.png" class='tw-rounded' />
 
 ## Create new page
 
@@ -50,9 +48,7 @@ export default class BrandForm extends BasePage {
 
 If the `init` function returns a `false` then a 404 page will be displayed to the user. You can try to visit `/brand/123`. A brand with the ID `123` does not exist so you should see a 404 page:
 
-```
-TODO: add 404 page
-```
+<img src="/introduction/8-min.png" class='tw-rounded' />
 
 ## Static getUrl helper
 
@@ -81,10 +77,10 @@ The `Workspace` also needs to be passed in because each URL is prefixed with the
 
 ## Uncomment lines in `BrandIndex`
 
-Now that our `BrandForm` is present we can uncomment the following lines in `BrandIndex`:
+Now that our `BrandForm` is present we can uncomment the navigate lines and add the `BrandForm` import in `BrandIndex`:
 
 ```ts
-// add the import
+// add import
 import BrandForm from './BrandForm.page';
 
 // uncomment
@@ -103,7 +99,7 @@ export default class BrandForm extends BasePage {
 	view() {
         Layout(this, () => [
             this.UI.Text({ // [!code ++]
-                label: 'Brands', // [!code ++]
+                label: 'Edit Brand', // [!code ++]
                 class: 'text-4xl text-gray-700 font-medium mb-4', // [!code ++]
             }), // [!code ++]
             this.UI.Container({ // [!code ++]
@@ -142,13 +138,13 @@ this.UI.Container({
 
 You see that the `getter` and the `setter` of the `Input` are bound to `this.brand.name`.
 
+<img src="/introduction/9-min.png" class='tw-rounded' />
+
 ## Add datatable
 
 Now let's make the datatable below the input where we can add different cars of the brand.
 
-```
-TODO: add screenshot
-```
+<img src="/introduction/10-min.png" class='tw-rounded' />
 
 ### Add the label and datatable
 
@@ -199,11 +195,10 @@ This column is just a simple `Input` that is bound to `car.model`.
 
 ### Add action column with delete button
 
+
 We also want to delete a car from the brand with this button:
 
-```
-TODO: show screenshot
-```
+<img src="/introduction/11-min.png" class='tw-rounded' />
 
 ```ts
 this.UI.DataTable({
@@ -241,9 +236,7 @@ this.UI.DataTable({
 
 Let's make a button to create a new row to the car's datatable:
 
-```
-screenshot of button
-```
+<img src="/introduction/12-min.png" class='tw-rounded' />
 
 ```ts
 this.UI.DataTable({
