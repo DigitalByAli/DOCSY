@@ -28,3 +28,26 @@ this.UI.File({
         { id: '1', name: 'Bader CV.pdf', percentage: () => 33 },
     ]"
 />
+
+## Show confirm
+
+```ts{5-12}
+this.UI.File({
+    files: () => product.images.all(),
+    onUpload: file => product.images.add(file),
+    onDelete: async file => {
+        const confirm = await this.client.confirm(
+            'Are you sure?',
+            'This action cannot be reversed!',
+            'Yes, delete image.'
+        );
+        if (confirm) {
+            this.database.delete(file);
+        }
+    }
+}), 
+```
+
+## Change file size limit
+
+You can modify the limit using the `maxUploadFileSizeMB` key in your config. Look at the [config page](/essentials/config#maxuploadfilesizemb) for more information.
