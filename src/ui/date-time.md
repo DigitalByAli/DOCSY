@@ -4,7 +4,7 @@ import BaseDateTime from '../../../SRC/public/src/Components/Base/BaseDateTime.v
 
 # DateTime
 
-The examples below are based on the following model:
+The example below is based on the following model:
 
 ```ts
 export class Customer extends Entity {

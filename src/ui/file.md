@@ -4,7 +4,7 @@ import BaseFile from '../../../SRC/public/src/Components/Base/File/BaseFile.vue'
 
 # File
 
-The examples below are based on the following models:
+The example below is based on the following models:
 
 ```ts
 export class Product extends Entity {
