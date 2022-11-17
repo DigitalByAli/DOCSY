@@ -70,3 +70,10 @@ export type SMTPConfig = {
 - Default: **randomlyGenerated**
 
 The key used for password hashing.
+
+## maxUploadFileSizeMB
+
+- Type: `number`
+- Default: `50`
+
+The maximum file size in megabytes that a user can upload.
