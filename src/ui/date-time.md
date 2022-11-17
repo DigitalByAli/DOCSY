@@ -4,10 +4,18 @@ import BaseDateTime from '../../../SRC/public/src/Components/Base/BaseDateTime.v
 
 # DateTime
 
+The examples below are based on the following model:
+
+```ts
+export class Customer extends Entity {
+    birthDate: Dayjs
+}
+```
+
 ```ts
 this.UI.DateTime({
-    setter: value => this.authUser.birthDate = value,
-    getter: () => this.authUser.birthDate,
+    setter: value => customer.birthDate = value,
+    getter: () => customer.birthDate,
 });
 ```
 

@@ -4,12 +4,21 @@ import BaseInput from '../../../SRC/public/src/Components/Base/BaseInput.vue'
 
 # Inputs
 
+The examples below are based on the following model:
+
+```ts
+export class Customer extends Entity {
+    name: string
+    age: number
+}
+```
+
 ## Text Input
 
 ```ts
 this.UI.Input({
-    setter: value => this.authUser.name = value,
-    getter: () => this.authUser.name,
+    setter: value => this.customer.name = value,
+    getter: () => this.customer.name,
 });
 ```
 
@@ -19,8 +28,8 @@ this.UI.Input({
 
 ```ts{4}
 this.UI.Input({
-    setter: value => this.authUser.age = value,
-    getter: () => this.authUser.age,
+    setter: value => this.customer.age = value,
+    getter: () => this.customer.age,
     type: 'number',
 });
 ```
@@ -31,8 +40,8 @@ this.UI.Input({
 
 ```ts{4}
 this.UI.Input({
-    setter: value => this.authUser.name = value,
-    getter: () => this.authUser.name,
+    setter: value => this.customer.name = value,
+    getter: () => this.customer.name,
     disabled: true,
 });
 ```

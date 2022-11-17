@@ -1,0 +1,1 @@
+import{_ as s,o as a,c as n,a as e}from"./app.ee2846cb.js";const v=JSON.parse('{"title":"Favicon","description":"","frontmatter":{},"headers":[],"relativePath":"essentials/favicon.md"}'),o={name:"essentials/favicon.md"},c=e("",4),t=[c];function p(i,l,r,d,_,D){return a(),n("div",null,t)}const h=s(o,[["render",p]]);export{v as __pageData,h as default};

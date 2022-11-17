@@ -58,7 +58,7 @@ export default defineConfig({
 					{ text: 'Select', link: '/ui/select' },
 					{ text: 'Toggle', link: '/ui/toggle' },
 					{ text: 'DateTime', link: '/ui/date-time' },
-					{ text: 'FileUpload', link: '/ui/file-upload' },
+					{ text: 'File', link: '/ui/file' },
 					{ text: 'DataTable', link: '/ui/data-table' },
 					{ text: 'Toast', link: '/ui/toast' },
 					{ text: 'Confirm', link: '/ui/confirm' },

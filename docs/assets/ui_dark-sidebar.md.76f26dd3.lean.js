@@ -1,1 +1,0 @@
-import{_ as s,o as a,c as n,a as p}from"./app.832d160e.js";const l="/DOCSY/ui/dark-sidebar.png",h=JSON.parse('{"title":"Dark Sidebar","description":"","frontmatter":{},"headers":[],"relativePath":"ui/dark-sidebar.md"}'),o={name:"ui/dark-sidebar.md"},e=p("",7),D=[e];function t(c,r,y,i,C,d){return a(),n("div",null,D)}const g=s(o,[["render",t]]);export{h as __pageData,g as default};

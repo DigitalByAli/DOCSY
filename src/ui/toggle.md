@@ -4,12 +4,20 @@ import BaseToggle from '../../../SRC/public/src/Components/Base/BaseToggle.vue'
 
 # Toggle
 
+The examples below are based on the following model:
+
+```ts
+export class Customer extends Entity {
+    isLoyal: boolean
+}
+```
+
 ## Default
 
 ```ts
 this.UI.Toggle({
-    state: () => this.authUser.isCool,
-    onToggle: newState => this.authUser.isCool = newState
+    state: () => customer.isLoyal,
+    onToggle: newState => customer.isLoyal = newState
 });
 ```
 
@@ -19,8 +27,8 @@ this.UI.Toggle({
 
 ```ts{4}
 this.UI.Toggle({
-    state: () => this.authUser.isCool,
-    onToggle: newState => this.authUser.isCool = newState,
+    state: () => customer.isLoyal,
+    onToggle: newState => customer.isLoyal = newState,
     disabled: true,
 });
 ```
