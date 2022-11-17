@@ -21,11 +21,11 @@ this.UI.File({
 
 <BaseFile
     :uploaded-files="[
-        { id: '1', name: 'Bader CV.pdf', displayName: 'Bader' },
-        { id: '2', name: 'Saba CV.pdf', displayName: 'Saba' },
+        { id: '2', name: 'Image2.png', displayName: 'Image2.png' },
+        { id: '1', name: 'Image1.png', displayName: 'Image1.png' },
     ]"
     :uploading-files="[
-        { id: '1', name: 'Bader CV.pdf', percentage: () => 33 },
+        { id: '1', name: 'Image3.png', percentage: () => 33 },
     ]"
 />
 
