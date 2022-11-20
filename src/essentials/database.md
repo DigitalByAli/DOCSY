@@ -32,3 +32,19 @@ this.database.getAll('Customer');           // get all valid customers
 this.database.getAllWithDraft('Customer');  // get all customers
 this.database.delete(customerPeter);        // delete customerPeter
 ```
+
+## Sorting
+
+The `sort` helper takes care of sorting an array of `Entity` objects. Because, this can be a bit cumbersome to handle `number`, `string`, `boolean` and `Dayjs` properties.
+
+### Example - DataTable newest first
+
+We want to sort the [DataTable](/ui/data-table) with the newest record first. We can do that with the following code:
+
+```ts{1,4}
+import { sort } from 'oksy';
+
+this.UI.DataTable({
+    data: () => sort(this.database.getAllWithDraft('Customer'), 'createdAt', 'DESC'),
+})
+```
