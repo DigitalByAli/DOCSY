@@ -34,7 +34,7 @@ import BrandIndex from './../BrandIndex.page';
 export function Layout(page: BasePage, view: () => any[]) {
 	return page.UI.DarkSidebar({
 		menu: [
-			{ name: 'Brand', href: BrandIndex.URL, icon: 'apartment' },
+			{ name: 'Brand', href: BrandIndex.URL, icon: 'apartment', highlight: BrandIndex.URL },
 		],
 		view,
 	});

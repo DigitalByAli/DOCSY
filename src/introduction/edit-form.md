@@ -9,7 +9,7 @@ In this chapter we will make the following page:
 Create a new file `/views/BrandForm.page.ts` with the following content:
 
 ```ts
-import { BasePage } from 'oksy';
+import { BasePage, Draft } from 'oksy';
 import { Layout } from './Components/Layout';
 
 export default class BrandForm extends BasePage {
@@ -35,11 +35,12 @@ export default class BrandForm extends BasePage {
 
 	static URL = '/brand/:brandId';
 
-    private brand: Brand // [!code ++]
+    private brand: Draft<Brand> // [!code ++]
 
     init(brandId: string) { // [!code ++]
-        this.brand = this.database.getById('Brand', brandId); // [!code ++]
-        if (this.brand === null) return false; // [!code ++]
+        const brand = this.database.getById('Brand', brandId); // [!code ++]
+        if (brand === null) return false; // [!code ++]
+        this.brand = brand; // [!code ++]
     } // [!code ++]
 
 	view() { ... }
@@ -61,13 +62,13 @@ export default class BrandForm extends BasePage {
 
 	static URL = '/brand/:brandId';
 
-    brand: Brand
+    brand: Draft<Brand>
 
     init(brandId: string) { ... }
 
 	view() { ... }
 
-    static getUrl(workspace: Workspace, brand: Brand) { // [!code ++]
+    static getUrl(workspace: Workspace, brand: Draft<Brand>) { // [!code ++]
         return `/${workspace.id}/brand/${brand.id}`; // [!code ++]
     } // [!code ++]
 }
@@ -127,7 +128,7 @@ this.UI.Container({
                     class: 'text-sm font-medium text-gray-900' // [!code ++]
                 }), // [!code ++]
                 this.UI.Input({ // [!code ++]
-                    getter: () => this.brand.name, // [!code ++]
+                    getter: () => this.brand.name ?? '', // [!code ++]
                     setter: value => this.brand.name = value // [!code ++]
                 }), // [!code ++]
             ] // [!code ++]

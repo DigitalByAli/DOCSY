@@ -15,11 +15,11 @@ export class Brand extends Entity {
 And create the `/models/Car.ts` file with the following contents:
 
 ```ts
-import { Entity, One } from 'oksy';
+import { Entity, One, Draft } from 'oksy';
 import { Brand } from './Brand';
 
 export class Car extends Entity {
-    brand: One<Brand, 'cars'>
+    brand: One<Draft<Brand>, 'cars'>
     model: string
 }
 ```
