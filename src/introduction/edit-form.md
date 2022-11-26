@@ -29,19 +29,19 @@ export default class BrandForm extends BasePage {
 Notice the `:brandId` parameter in the URL, this will be passed to the `init` method. We want to look up the `Brand` model using the `brandId` variable and return a 404 page if no brand could be found:
 
 ```ts
-import { Brand } from '../models/Brand'; // [!code ++]
+import { Brand } from '../models/Brand';// [!code hl]
 
 export default class BrandForm extends BasePage {
 
 	static URL = '/brand/:brandId';
 
-    private brand: Draft<Brand> // [!code ++]
+    private brand: Draft<Brand>// [!code hl]
 
-    init(brandId: string) { // [!code ++]
-        const brand = this.database.getById('Brand', brandId); // [!code ++]
-        if (brand === null) return false; // [!code ++]
-        this.brand = brand; // [!code ++]
-    } // [!code ++]
+    init(brandId: string) {// [!code hl]
+        const brand = this.database.getById('Brand', brandId);// [!code hl]
+        if (brand === null) return false;// [!code hl]
+        this.brand = brand;// [!code hl]
+    }// [!code hl]
 
 	view() { ... }
 }
@@ -56,7 +56,7 @@ If the `init` function returns a `false` then a 404 page will be displayed to th
 Let's also add a static method to this page that returns us the URL of the page.
 
 ```ts
-import { Workspace } from '../models/Core/Workspace'; // [!code ++]
+import { Workspace } from '../models/Core/Workspace';// [!code hl]
 
 export default class BrandForm extends BasePage {
 
@@ -68,9 +68,9 @@ export default class BrandForm extends BasePage {
 
 	view() { ... }
 
-    static getUrl(workspace: Workspace, brand: Draft<Brand>) { // [!code ++]
-        return `/${workspace.id}/brand/${brand.id}`; // [!code ++]
-    } // [!code ++]
+    static getUrl(workspace: Workspace, brand: Draft<Brand>) {// [!code hl]
+        return `/${workspace.id}/brand/${brand.id}`;// [!code hl]
+    }// [!code hl]
 }
 ```
 
@@ -85,7 +85,7 @@ Now that our `BrandForm` is present we can uncomment the navigate lines and add 
 import BrandForm from './BrandForm.page';
 
 // uncomment
-this.client.navigate(BrandForm.getUrl(this.workspace, brand), 'push'); 
+this.client.navigate(BrandForm.getUrl(this.workspace, brand), 'push');
 ```
 
 ## Page title and card
@@ -99,14 +99,14 @@ export default class BrandForm extends BasePage {
 
 	view() {
         Layout(this, () => [
-            this.UI.Text({ // [!code ++]
-                label: 'Edit Brand', // [!code ++]
-                class: 'text-4xl text-gray-700 font-medium mb-4', // [!code ++]
-            }), // [!code ++]
-            this.UI.Container({ // [!code ++]
-                class: 'w-full flex flex-col space-y-3 px-4 py-5 sm:p-6 rounded-lg shadow bg-white', // [!code ++]
-                items: () => [], // [!code ++]
-            }), // [!code ++]
+            this.UI.Text({// [!code hl]
+                label: 'Edit Brand',// [!code hl]
+                class: 'text-4xl text-gray-700 font-medium mb-4',// [!code hl]
+            }),// [!code hl]
+            this.UI.Container({// [!code hl]
+                class: 'w-full flex flex-col space-y-3 px-4 py-5 sm:p-6 rounded-lg shadow bg-white',// [!code hl]
+                items: () => [],// [!code hl]
+            }),// [!code hl]
         ]),
     }
 }
@@ -120,19 +120,19 @@ In the white container we want to add an input for editing the brand name:
 this.UI.Container({
     class: 'w-full flex flex-col space-y-3 px-4 py-5 sm:p-6 rounded-lg shadow bg-white',
     items: () => [
-        this.UI.Container({ // [!code ++]
-            class: 'flex flex-col space-y-1', // [!code ++]
-            items: () => [ // [!code ++]
-                this.UI.Text({ // [!code ++]
-                    label: 'Name', // [!code ++]
-                    class: 'text-sm font-medium text-gray-900' // [!code ++]
-                }), // [!code ++]
-                this.UI.Input({ // [!code ++]
-                    getter: () => this.brand.name ?? '', // [!code ++]
-                    setter: value => this.brand.name = value // [!code ++]
-                }), // [!code ++]
-            ] // [!code ++]
-        }), // [!code ++]
+        this.UI.Container({// [!code hl]
+            class: 'flex flex-col space-y-1',// [!code hl]
+            items: () => [// [!code hl]
+                this.UI.Text({// [!code hl]
+                    label: 'Name',// [!code hl]
+                    class: 'text-sm font-medium text-gray-900'// [!code hl]
+                }),// [!code hl]
+                this.UI.Input({// [!code hl]
+                    getter: () => this.brand.name ?? '',// [!code hl]
+                    setter: value => this.brand.name = value// [!code hl]
+                }),// [!code hl]
+            ]// [!code hl]
+        }),// [!code hl]
     ],
 }),
 ```
@@ -154,20 +154,20 @@ this.UI.Container({
     class: 'w-full flex flex-col space-y-3 px-4 py-5 sm:p-6 rounded-lg shadow bg-white',
     items: () => [
         this.UI.Container({ ... }), // the input container
-        this.UI.Container({ // [!code ++]
-            class: 'flex flex-col space-y-1', // [!code ++]
-            items: () => [ // [!code ++]
-                this.UI.Text({ // [!code ++]
-                    label: 'Cars', // [!code ++]
-                    class: 'text-sm font-medium text-gray-900' // [!code ++]
-                }), // [!code ++]
-                this.UI.DataTable({ // [!code ++]
-                    data: () => this.brand.cars.allWithDraft(), // [!code ++]
-                    actions: [], // [!code ++]
-                    columns: car => [], // [!code ++]
-                }), // [!code ++]
-            ] // [!code ++]
-        }), // [!code ++]
+        this.UI.Container({// [!code hl]
+            class: 'flex flex-col space-y-1',// [!code hl]
+            items: () => [// [!code hl]
+                this.UI.Text({// [!code hl]
+                    label: 'Cars',// [!code hl]
+                    class: 'text-sm font-medium text-gray-900'// [!code hl]
+                }),// [!code hl]
+                this.UI.DataTable({// [!code hl]
+                    data: () => this.brand.cars.allWithDraft(),// [!code hl]
+                    actions: [],// [!code hl]
+                    columns: car => [],// [!code hl]
+                }),// [!code hl]
+            ]// [!code hl]
+        }),// [!code hl]
     ],
 }),
 ```
@@ -179,15 +179,15 @@ this.UI.DataTable({
     data: () => this.brand.cars.allWithDraft(),
     actions: [],
     columns: car => [
-        { // [!code ++]
-            name: 'Model', // [!code ++]
-            view: () => [ // [!code ++]
-                this.UI.Input({ // [!code ++]
-                    getter: () => car.model ?? '', // [!code ++]
-                    setter: value => car.model = value // [!code ++]
-                }) // [!code ++]
-            ] // [!code ++]
-        }, // [!code ++]
+        {// [!code hl]
+            name: 'Model',// [!code hl]
+            view: () => [// [!code hl]
+                this.UI.Input({// [!code hl]
+                    getter: () => car.model ?? '',// [!code hl]
+                    setter: value => car.model = value// [!code hl]
+                })// [!code hl]
+            ]// [!code hl]
+        },// [!code hl]
     ],
 }),
 ```
@@ -207,28 +207,28 @@ this.UI.DataTable({
     actions: [],
     columns: car => [
         { ... }, // the model column
-        { // [!code ++]
-            name: '', // [!code ++]
-            view: ({ refresh }) => [ // [!code ++]
-                this.UI.Button({ // [!code ++]
-                    type: 'danger', // [!code ++]
-                    label: 'Delete', // [!code ++]
-                    icon: 'delete', // [!code ++]
-                    ghost: true, // [!code ++]
-                    onClick: async () => { // [!code ++]
-                        const confirm = await this.client.confirm( // [!code ++]
-                            'Are you sure?', // [!code ++]
-                            'This action can not be reversed!', // [!code ++]
-                            'Yes, delete car.' // [!code ++]
-                        ); // [!code ++]
-                        if (confirm) { // [!code ++]
-                            this.database.delete(car); // [!code ++]
-                            refresh() // [!code ++]
-                        } // [!code ++]
-                    } // [!code ++]
-                }) // [!code ++]
-            ] // [!code ++]
-        }, // [!code ++]
+        {// [!code hl]
+            name: '',// [!code hl]
+            view: ({ refresh }) => [// [!code hl]
+                this.UI.Button({// [!code hl]
+                    type: 'danger',// [!code hl]
+                    label: 'Delete',// [!code hl]
+                    icon: 'delete',// [!code hl]
+                    ghost: true,// [!code hl]
+                    onClick: async () => {// [!code hl]
+                        const confirm = await this.client.confirm(// [!code hl]
+                            'Are you sure?',// [!code hl]
+                            'This action can not be reversed!',// [!code hl]
+                            'Yes, delete car.'// [!code hl]
+                        );// [!code hl]
+                        if (confirm) {// [!code hl]
+                            this.database.delete(car);// [!code hl]
+                            refresh()// [!code hl]
+                        }// [!code hl]
+                    }// [!code hl]
+                })// [!code hl]
+            ]// [!code hl]
+        },// [!code hl]
     ],
 }),
 ```
@@ -243,15 +243,15 @@ Let's make a button to create a new row to the car's datatable:
 this.UI.DataTable({
     data: () => this.brand.cars.allWithDraft(),
     actions: [
-        { // [!code ++]
-            icon: 'add', // [!code ++]
-            label: 'Add', // [!code ++]
-            onClick: ({ refresh }) => { // [!code ++]
-                const car = this.database.create('Car'); // [!code ++]
-                car.brand = this.brand; // [!code ++]
-                refresh(); // [!code ++]
-            } // [!code ++]
-        }, // [!code ++]
+        {// [!code hl]
+            icon: 'add',// [!code hl]
+            label: 'Add',// [!code hl]
+            onClick: ({ refresh }) => {// [!code hl]
+                const car = this.database.create('Car');// [!code hl]
+                car.brand = this.brand;// [!code hl]
+                refresh();// [!code hl]
+            }// [!code hl]
+        },// [!code hl]
     ],
     columns: car => [ ... ],
 }),

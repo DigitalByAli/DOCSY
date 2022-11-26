@@ -7,3 +7,11 @@
 mark {
     background-color: #f8ff00;
 }
+
+.shiki{
+    user-select: none;
+}
+
+.shiki code span {
+    user-select: text !important;
+}

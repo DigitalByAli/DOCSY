@@ -58,10 +58,10 @@ export default class BrandIndex extends BasePage {
 	view() {
 		return [
 			Layout(this, () => [
-				this.UI.Text({ // [!code ++]
-					label: 'Brands', // [!code ++]
-					class: 'text-4xl text-gray-700 font-medium mb-4', // [!code ++]
-				}), // [!code ++]
+				this.UI.Text({// [!code hl]
+					label: 'Brands',// [!code hl]
+					class: 'text-4xl text-gray-700 font-medium mb-4',// [!code hl]
+				}),// [!code hl]
 			]),
 		];
 	}
@@ -84,16 +84,16 @@ Layout(this, () => [
 		label: 'Brands',
 		class: 'text-4xl text-gray-700 font-medium mb-4',
 	}),
-	this.UI.Container({ // [!code ++]
-		class: 'w-full flex flex-col space-y-3 px-4 py-5 sm:p-6 rounded-lg shadow bg-white', // [!code ++]
-		items: () => [ // [!code ++]
-			this.UI.DataTable({ // [!code ++]
-				data: () => this.database.getAllWithDraft('Brand'), // [!code ++]
-				actions: [], // [!code ++]
-				columns: brand => [], // [!code ++]
-			}), // [!code ++]
-		], // [!code ++]
-	}), // [!code ++]
+	this.UI.Container({// [!code hl]
+		class: 'w-full flex flex-col space-y-3 px-4 py-5 sm:p-6 rounded-lg shadow bg-white',// [!code hl]
+		items: () => [// [!code hl]
+			this.UI.DataTable({// [!code hl]
+				data: () => this.database.getAllWithDraft('Brand'),// [!code hl]
+				actions: [],// [!code hl]
+				columns: brand => [],// [!code hl]
+			}),// [!code hl]
+		],// [!code hl]
+	}),// [!code hl]
 ]),
 ```
 
@@ -104,22 +104,22 @@ this.UI.DataTable({
 	data: () => this.database.getAllWithDraft('Brand'),
 	actions: [],
 	columns: brand => [
-		{ // [!code ++]
-			name: 'Name', // [!code ++]
-			view: () => [ // [!code ++]
-				this.UI.Text({ label: () => brand.name ?? '' }), // [!code ++]
-			], // [!code ++]
-			search: () => brand.name ?? '', // [!code ++]
-			sort: () => brand.name, // [!code ++]
-		},// [!code ++]
-		{// [!code ++]
-			name: 'Amount of cars', // [!code ++]
-			view: () => [ // [!code ++]
-				this.UI.Text({ label: () => brand.cars.size().toString() }), // [!code ++]
-			], // [!code ++]
-			search: () => brand.cars.size().toString() ?? '', // [!code ++]
-			sort: () => brand.cars.size(), // [!code ++]
-		}, // [!code ++]
+		{// [!code hl]
+			name: 'Name',// [!code hl]
+			view: () => [// [!code hl]
+				this.UI.Text({ label: () => brand.name ?? '' }),// [!code hl]
+			],// [!code hl]
+			search: () => brand.name ?? '',// [!code hl]
+			sort: () => brand.name,// [!code hl]
+		},// [!code hl]
+		{// [!code hl]
+			name: 'Amount of cars',// [!code hl]
+			view: () => [// [!code hl]
+				this.UI.Text({ label: () => brand.cars.size().toString() }),// [!code hl]
+			],// [!code hl]
+			search: () => brand.cars.size().toString() ?? '',// [!code hl]
+			sort: () => brand.cars.size(),// [!code hl]
+		},// [!code hl]
 	],
 }),
 ```
@@ -134,11 +134,11 @@ You should see 2 columns that are both **searchable** and **sortable** on your p
 this.UI.DataTable({
 	data: () => this.database.getAllWithDraft('Brand'),
 	actions: [
-		{ // [!code ++]
-			icon: 'add', // [!code ++]
-			label: 'Add', // [!code ++]
-			onClick: () => { }, // [!code ++]
-		}, // [!code ++]
+		{// [!code hl]
+			icon: 'add',// [!code hl]
+			label: 'Add',// [!code hl]
+			onClick: () => { },// [!code hl]
+		},// [!code hl]
 	],
 	columns: brand => [...],
 }),
@@ -168,15 +168,15 @@ this.UI.DataTable({
 	...,
 	columns: brand => [
 		...,
-		{ // [!code ++]
-			name: '', // [!code ++]
-			view: () => [ // [!code ++]
-				this.UI.Container({ // [!code ++]
-					class: 'flex', // [!code ++]
-					items: () => [] // [!code ++]
-				}), // [!code ++]
-			], // [!code ++]
-		}, // [!code ++]
+		{// [!code hl]
+			name: '',// [!code hl]
+			view: () => [// [!code hl]
+				this.UI.Container({// [!code hl]
+					class: 'flex',// [!code hl]
+					items: () => []// [!code hl]
+				}),// [!code hl]
+			],// [!code hl]
+		},// [!code hl]
 	],
 }),
 ```
@@ -187,15 +187,15 @@ Now let's add an edit button to the action column.
 this.UI.Container({
 	class: 'flex',
 	items: () => [
-		this.UI.Button({ // [!code ++]
-			type: 'tertiary', // [!code ++]
-			ghost: true, // [!code ++]
-			label: 'Edit', // [!code ++]
-			icon: 'edit', // [!code ++]
-			onClick: () => { // [!code ++]
-				// this.client.navigate(BrandForm.getUrl(this.workspace, brand), 'push'); // [!code ++]
-			} // [!code ++]
-		}), // [!code ++]
+		this.UI.Button({// [!code hl]
+			type: 'tertiary',// [!code hl]
+			ghost: true,// [!code hl]
+			label: 'Edit',// [!code hl]
+			icon: 'edit',// [!code hl]
+			onClick: () => {// [!code hl]
+				// this.client.navigate(BrandForm.getUrl(this.workspace, brand), 'push');// [!code hl]
+			}// [!code hl]
+		}),// [!code hl]
 	]
 })
 ```
@@ -213,25 +213,25 @@ Now let's add a delete button to the datatable:
 ```ts
 this.UI.Container({
 	class: 'flex',
-	items: ({ refresh }) => [ // [!code ++]
+	items: ({ refresh }) => [// [!code hl]
 		this.UI.Button({ ... }), // the edit button
-		this.UI.Button({ // [!code ++]
-			type: 'danger', // [!code ++]
-			ghost: true, // [!code ++]
-			label: 'Delete', // [!code ++]
-			icon: 'delete', // [!code ++]
-			onClick: async () => { // [!code ++]
-				const confirm = await this.client.confirm( // [!code ++]
-					'Are you sure?', // [!code ++]
-					'All the cars that belong to this brand will also be deleted. This action can not be reversed!', // [!code ++]
-					'Yes, delete brand.' // [!code ++]
-				); // [!code ++]
-				if (confirm) { // [!code ++]
-					this.database.delete(brand); // [!code ++]
-					refresh(); // [!code ++]
-				} // [!code ++]
-			} // [!code ++]
-		}) // [!code ++]
+		this.UI.Button({// [!code hl]
+			type: 'danger',// [!code hl]
+			ghost: true,// [!code hl]
+			label: 'Delete',// [!code hl]
+			icon: 'delete',// [!code hl]
+			onClick: async () => {// [!code hl]
+				const confirm = await this.client.confirm(// [!code hl]
+					'Are you sure?',// [!code hl]
+					'All the cars that belong to this brand will also be deleted. This action can not be reversed!',// [!code hl]
+					'Yes, delete brand.'// [!code hl]
+				);// [!code hl]
+				if (confirm) {// [!code hl]
+					this.database.delete(brand);// [!code hl]
+					refresh();// [!code hl]
+				}// [!code hl]
+			}// [!code hl]
+		})// [!code hl]
 	]
 })
 ```
