@@ -11,9 +11,6 @@ hero:
       text: Get Started
       link: /introduction/install-and-run.html
     - theme: alt
-      text: Tutorial video
-      link: https://www.youtube.com/watch?v=sCPD64Jk3zQ
-    - theme: alt
       text: Join Discord
       link: https://discord.gg/V6dtmWy9HP
 features:
