@@ -1,1 +1,0 @@
-import{_ as s,o as a,c as e,a as n}from"./app.bf5b1460.js";const u=JSON.parse('{"title":"Terminal","description":"","frontmatter":{},"headers":[],"relativePath":"essentials/terminal.md"}'),t={name:"essentials/terminal.md"},o=n("",6),l=[o];function i(c,p,r,d,h,_){return a(),e("div",null,l)}const y=s(t,[["render",i]]);export{u as __pageData,y as default};
