@@ -42,6 +42,7 @@ export default defineConfig({
 					{ text: 'Models', link: '/essentials/models' },
 					{ text: 'Database', link: '/essentials/database' },
 					{ text: 'Pages', link: '/essentials/pages' },
+					{ text: 'API', link: '/essentials/api' },
 					{ text: 'Terminal', link: '/essentials/terminal' },
 					{ text: 'Favicon', link: '/essentials/favicon' },
 					{ text: 'Config', link: '/essentials/config' },
